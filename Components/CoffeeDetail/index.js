@@ -25,7 +25,7 @@ import coffeeshops from "../CoffeeList/list";
 class CoffeeDetail extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: "Coffee Detail",
+      title: navigation.getParam("coffeeShop").name,
       headerRight: (
         <Button
           title="Press Me"
