@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+//Connect
 import { connect } from "react-redux";
+
 // NativeBase Components
 import { List, Content, Spinner, Icon, Button } from "native-base";
 
@@ -9,20 +11,13 @@ import coffeeshops from "./list";
 // Component
 import CoffeeItem from "./CoffeeItem";
 
+// Cart Button
+import CartButton from "../CartButton";
+
 class CoffeeList extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: "Coffee List",
-      headerRight: (
-        <Button
-          title="Press Me"
-          color="white"
-          onPress={() => navigation.navigate("CoffeeCart")}
-        >
-          <Icon name="cart" />
-        </Button>
-      )
-    };
+  static navigationOptions = {
+    title: "Coffee List",
+    headerRight: <CartButton />
   };
   render() {
     const { coffeeShops, loading } = this.props.coffeeReducer;

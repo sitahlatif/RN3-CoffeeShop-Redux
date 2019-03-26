@@ -6,7 +6,7 @@ import { ListItem, Card, CardItem, Thumbnail, Text, Left } from "native-base";
 
 // Style
 import styles from "./styles";
-
+// With Navigation
 import { withNavigation } from "react-navigation";
 
 class CoffeeItem extends Component {
@@ -24,6 +24,7 @@ class CoffeeItem extends Component {
         <ListItem
           button
           style={styles.listitem}
+          // calling props of navigation to navigate to coffeeDetail and passing coffeeShop props
           onPress={() =>
             this.props.navigation.navigate("CoffeeDetail", {
               coffeeShop: coffeeShop

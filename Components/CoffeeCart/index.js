@@ -2,11 +2,24 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 // NativeBase Components
-import { Text, List, Button } from "native-base";
+import { Text, List, Button, Icon } from "native-base";
 // Component
 import CartItem from "./CartItem";
 
 class CoffeeCart extends Component {
+  //navigation option to a specific thing to the cart item
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: (
+        <Icon
+          onPress={() => navigation.navigate("OrderHistory")}
+          name="history"
+          type="FontAwesome"
+          style={{ color: "white" }}
+        />
+      )
+    };
+  };
   render() {
     let items = this.props.items;
     let cartItems;

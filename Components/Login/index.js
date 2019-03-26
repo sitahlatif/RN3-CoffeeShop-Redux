@@ -56,6 +56,7 @@ class Login extends Component {
           <Button
             full
             success
+            //on press the button will navigate to CoffeeList
             onPress={() => this.props.navigation.navigate("CoffeeList")}
           >
             <Text>Login</Text>
@@ -63,6 +64,7 @@ class Login extends Component {
           <Button
             full
             warning
+            //on press the button will navigate to CoffeeList
             onPress={() => this.props.navigation.navigate("CoffeeList")}
           >
             <Text>Register</Text>

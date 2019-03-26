@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+//connect
 import { connect } from "react-redux";
 
 // NativeBase Components
@@ -12,8 +13,7 @@ import {
   List,
   ListItem,
   Picker,
-  Content,
-  Icon
+  Content
 } from "native-base";
 
 // Style
@@ -21,20 +21,14 @@ import styles from "./styles";
 
 //List
 import coffeeshops from "../CoffeeList/list";
+import CartButton from "../CartButton";
 
 class CoffeeDetail extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
+      //to change the title according to the title's of selected coffeeshop
       title: navigation.getParam("coffeeShop").name,
-      headerRight: (
-        <Button
-          title="Press Me"
-          color="white"
-          onPress={() => navigation.navigate("CoffeeCart")}
-        >
-          <Icon name="cart" />
-        </Button>
-      )
+      headerRight: <CartButton />
     };
   };
   state = {
@@ -55,6 +49,7 @@ class CoffeeDetail extends Component {
   };
 
   render() {
+    // calling the props by using navigation getParam and name of props assign it to varaiable
     let coffeeshop = this.props.navigation.getParam("coffeeShop");
     const { loading } = this.props.coffeeReducer;
     if (loading) return <Content />;
