@@ -13,7 +13,7 @@ import CoffeeList from "../CoffeeList";
 import CoffeeCart from "../CoffeeCart";
 import CoffeeDetail from "../CoffeeDetail";
 import Login from "../Login";
-import AppContiner from "../../Navigation/index.js";
+import AppContiner from "../../Navigation";
 
 // Actions
 import { getCoffeeShops } from "../../store/actions/coffeeActions";
